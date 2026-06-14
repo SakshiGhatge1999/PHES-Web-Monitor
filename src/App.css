@@ -1,0 +1,12 @@
+•⁠  ⁠{ box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: Arial, sans-serif; background: #f0f4f8; color: #1a1a2e; }
+.app-header { background: #1F4E79; color: white; padding: 20px 32px; }
+.app-header h1 { font-size: 1.8rem; }
+.app-header p { font-size: 0.95rem; opacity: 0.85; margin-top: 4px; }
+.app-main { max-width: 1200px; margin: 0 auto; padding: 24px 16px; }
+.loading { color: #2E75B6; padding: 16px; }
+.error { color: #cc0000; padding: 16px; }
+@media (max-width: 768px) {
+  .app-header { padding: 16px; }
+  .app-main { padding: 16px 8px; }
+}

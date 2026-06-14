@@ -1,12 +1,10 @@
-FROM python:3.11-slim
-
+FROM node:18-alpine AS build
 WORKDIR /app
-
-COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
-
+COPY package.json .
+RUN npm install
 COPY . .
-
-EXPOSE 5000
-
-CMD ["python", "app.py"]
+RUN npm run build
+FROM nginx:alpine
+COPY --from=build /app/build /usr/share/nginx/html
+EXPOSE 80
+CMD ["nginx", "-g", "daemon off;"]
